@@ -5,6 +5,8 @@ public class Cars {
     private String Owner;
     private String ID;
 
+private int numb;
+
     public Cars(){
 
     }
@@ -13,7 +15,7 @@ public class Cars {
         Model = model;
         Owner = owner;
         this.ID = ID;
-    }
+    }//constructor
 
     public String getModel() {
         return Model;
@@ -38,4 +40,5 @@ public class Cars {
     public void setID(String ID) {
         this.ID = ID;
     }
+    //helping class
 }

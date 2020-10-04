@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".signup"
+        android:orientation="vertical"
+        android:background="#f2f2f2"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/car"
+            android:contentDescription="@string/todo"
+            android:transitionName="logoImage"/>
+
+        <TextView
+            android:id="@+id/welcome"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textSize="40sp"
+            android:fontFamily="cursive"
+            android:layout_marginTop="20dp"
+            android:transitionName="logoText"/>
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emp_list"
+            android:fontFamily="cursive"
+            android:textSize="18sp"
+            android:transitionName="desc_transition"/>
+        //emp
+
+        <TextView
+            android:id="@+id/empName"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emp_name"
+            android:fontFamily="cursive"
+            android:textSize="18sp"
+            android:transitionName="desc_transition"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

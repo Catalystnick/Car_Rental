@@ -32,6 +32,7 @@ public class carslist extends AppCompatActivity {
         saveCar = findViewById(R.id.add_car);
 
         reff = FirebaseDatabase.getInstance().getReference().child("CAR");
+        //firebase reference
 
         saveCar.setOnClickListener(new View.OnClickListener() {
             @Override
