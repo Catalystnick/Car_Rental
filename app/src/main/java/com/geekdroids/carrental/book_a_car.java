@@ -1,6 +1,7 @@
 package com.geekdroids.carrental;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +35,7 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
     Button savebtn;
     Spinner spinner, selectlocation;
     TextView selectcartxt;
-    TextInputEditText Datetxt, Timetxt;
+    TextInputEditText Datestarttxt, DateEndTxt, TimeStarttxt, Timeendtxt;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
     FirebaseUser user;
@@ -43,8 +44,8 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
     Location selectLocation;
 
 
-    String[] carList = {"Choose a car", "Car1" , "Car2", "Car3", "Car4"};
-    String[] locationList = {"Choose a location", "Location1", "Location2","Location2"};
+    String[] carList = {"Choose a car", "Toyota Corolla" , "Mitsubishi Lancer", "Nissan - Gtr", "Subaru Impreza"};
+    String[] locationList = {"Choose a location", "Colombo branch", "Negombo branch","Jaffna branch", "BIA - Bandaranayake International Airport", "Mattala Airport"};
 
 
     @Override
@@ -59,8 +60,10 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
         user = firebaseAuth.getCurrentUser();
 
         selectcartxt = findViewById(R.id.selectCarTxt);
-        Datetxt = findViewById(R.id.setDate);
-        Timetxt = findViewById(R.id.setTime);
+        Datestarttxt= findViewById(R.id.setDate);
+        DateEndTxt = findViewById(R.id.setendDate);
+        TimeStarttxt = findViewById(R.id.setTime);
+        Timeendtxt = findViewById(R.id.setendTime);
         savebtn = findViewById(R.id.save);
 
         spinner = findViewById(R.id.selectcar);
@@ -87,9 +90,12 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public void onClick(View v) {
                 Save(item);
+                SaveLocation(location);
                 SaveDate();
                 SaveTime();
-                SaveLocation(location);
+
+                startHomescreen();
+
 
 
 
@@ -113,6 +119,11 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    void startHomescreen(){
+        startActivity(new Intent(getApplicationContext(),home_screen.class));
+        finish();
     }
 
     void Save(String item) {
@@ -181,33 +192,60 @@ public class book_a_car extends AppCompatActivity implements AdapterView.OnItemS
 
     }
 
+
+
 void SaveDate(){
-    String date = Datetxt.getText().toString();
-    DocumentReference documentReference = firestore.collection("Date").document(user.getUid());
+    String date = Datestarttxt.getText().toString();
+    DocumentReference documentReference = firestore.collection("Date").document(user.getUid()).collection("Start Date").document("date");
 
     Map<String,Object> setdate = new HashMap<>();
-    setdate.put("date", date);
+    setdate.put("Start Date", date);
 
     documentReference.set(setdate).addOnSuccessListener(new OnSuccessListener<Void>() {
         @Override
         public void onSuccess(Void aVoid) {
-            Log.d(TAG, "Date added");
+            Toast.makeText(book_a_car.this, "Start date added", Toast.LENGTH_SHORT);
         }
     });
 
+    String endDate = DateEndTxt.getText().toString();
+    DocumentReference documentReference1 = firestore.collection("Date").document(user.getUid()).collection("End Date").document("date");
+
+    Map<String, Object> enddate = new HashMap<>();
+    enddate.put("End Date", endDate);
+
+    documentReference1.set(enddate).addOnSuccessListener(new OnSuccessListener<Void>() {
+        @Override
+        public void onSuccess(Void aVoid) {
+            Toast.makeText(book_a_car.this, "End date added", Toast.LENGTH_SHORT);
+        }
+    });
 }
 
 void SaveTime(){
-    String time = Timetxt.getText().toString();
-    DocumentReference documentReference = firestore.collection("Time").document(user.getUid());
+    String time = TimeStarttxt.getText().toString();
+    DocumentReference documentReference2 = firestore.collection("Time").document(user.getUid()).collection("Start Time").document("Start Time");
 
     Map<String,Object> settime = new HashMap<>();
-    settime.put("date", time);
+    settime.put("Start Time", time);
 
-    documentReference.set(settime).addOnSuccessListener(new OnSuccessListener<Void>() {
+    documentReference2.set(settime).addOnSuccessListener(new OnSuccessListener<Void>() {
         @Override
         public void onSuccess(Void aVoid) {
-            Log.d(TAG, "Time added");
+            Toast.makeText(book_a_car.this, "Start time added", Toast.LENGTH_SHORT);
+        }
+    });
+
+    String Endtime = Timeendtxt.getText().toString();
+    DocumentReference documentReference3 = firestore.collection("Time").document(user.getUid()).collection("Return Time").document("End Time");
+
+    Map<String,Object> endtime = new HashMap<>();
+    endtime.put("End Time", Endtime);
+
+    documentReference3.set(endtime).addOnSuccessListener(new OnSuccessListener<Void>() {
+        @Override
+        public void onSuccess(Void aVoid) {
+            Toast.makeText(book_a_car.this, "End time added", Toast.LENGTH_SHORT);
         }
     });
 

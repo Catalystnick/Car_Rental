@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
@@ -26,12 +26,24 @@
         </TextView>
 
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
+
         <Spinner
             android:id="@+id/selectcar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:layout_editor_absoluteX="50dp"
             tools:layout_editor_absoluteY="200dp" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/selectLocationTxt"
@@ -45,13 +57,24 @@
 
         </TextView>
 
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
 
         <Spinner
             android:id="@+id/selectLocation"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="200dp" />
+            tools:layout_editor_absoluteY="100dp" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="?android:attr/listDivider" />
 
     </LinearLayout>
 
@@ -108,7 +131,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_toEndOf="@+id/Pickdatetxt"
 
-                android:text="Pick a start date"
+                android:text="Pick a end date"
                 android:textSize="20dp"
 
                 ></TextView>

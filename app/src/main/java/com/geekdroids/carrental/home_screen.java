@@ -27,7 +27,7 @@ import com.squareup.picasso.Picasso;
 public class home_screen extends AppCompatActivity {
 
     public static final String TAG = "tag";
-    TextView fullname, email, nic;
+    TextView fullname, email, nic,phoneNo, Startdate, Enddate, startTime, endTime;
     ImageView profileImage;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
@@ -45,14 +45,19 @@ public class home_screen extends AppCompatActivity {
         fullname = findViewById(R.id.fname);
         email = findViewById(R.id.profileemail);
         nic = findViewById(R.id.nic);
+        phoneNo = findViewById(R.id.phone);
         profileImage = findViewById(R.id.profile_image);
+        Startdate = findViewById(R.id.startdate);
+        Enddate = findViewById(R.id.returndate);
+        startTime = findViewById(R.id.StartTime);
+        endTime = findViewById(R.id.EndTime);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
 
         storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/" +firebaseAuth.getCurrentUser().getUid()+ "/profile.jpg");
+        StorageReference profileRef = storageReference.child("users/" + firebaseAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -61,21 +66,19 @@ public class home_screen extends AppCompatActivity {
         });
 
 
-
-
         userId = firebaseAuth.getCurrentUser().getUid();
-
         DocumentReference documentReference = firestore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>(){
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
 
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                if(documentSnapshot.exists()){
+                if (documentSnapshot.exists()) {
                     fullname.setText(documentSnapshot.getString("fName"));
                     email.setText(documentSnapshot.getString("email"));
                     nic.setText(documentSnapshot.getString("Nic"));
-                }else{
-                    Log.d(TAG, "onEvent: Document does not exist" );
+                    phoneNo.setText(documentSnapshot.getString("PhoneNo"));
+                } else {
+                    Log.d(TAG, "onEvent: Document does not exist");
                 }
 
 
@@ -83,9 +86,74 @@ public class home_screen extends AppCompatActivity {
         });
 
 
+//
+        firestore = FirebaseFirestore.getInstance();
+        final DocumentReference StartDate = firestore.collection("Date").document(userId).collection("Start Date").document("date");
+        StartDate.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
 
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
+                if (documentSnapshot.exists()) {
+                    Startdate.setText(documentSnapshot.getString("Start Date"));
+                }else {
+                    Log.d(TAG, "on Event: document doesnt exist");
+                }
+            }
+
+        });
+
+        final  DocumentReference EndDate = firestore.collection("Date").document(userId).collection("End Date").document("date");
+        EndDate.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
+                if (documentSnapshot.exists()) {
+                    Enddate.setText(documentSnapshot.getString("End Date"));
+                }else {
+                    Log.d(TAG, "on Event: document doesnt exist");
+                }
+            }
+
+        });
+
+
+
+        final  DocumentReference starttime = firestore.collection("Time").document(userId).collection("Start Time").document("Start Time");
+        starttime.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
+                if (documentSnapshot.exists()) {
+                    startTime.setText(documentSnapshot.getString("Start Time"));
+                }else {
+                    Log.d(TAG, "on Event: document doesnt exist");
+                }
+            }
+
+        });
+
+        final  DocumentReference returntime = firestore.collection("Time").document(userId).collection("Return Time").document("End Time");
+        returntime.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
+                if (documentSnapshot.exists()) {
+                    endTime.setText(documentSnapshot.getString("End Time"));
+                }else {
+                    Log.d(TAG, "on Event: document doesnt exist");
+                }
+            }
+
+        });
 
     }
+
+
+
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
@@ -99,6 +167,7 @@ public class home_screen extends AppCompatActivity {
         intent.putExtra("fullname", fullname.getText().toString());
         intent.putExtra("email",  email.getText().toString());
         intent.putExtra("nic",  nic.getText().toString());
+        intent.putExtra("phone", phoneNo.getText().toString());
         startActivity(intent);
 
     }

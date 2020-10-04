@@ -108,13 +108,13 @@ public class login_signup extends AppCompatActivity {
              );
 
 
-        adminmode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), employee_list.class));
-                finish();
-            }
-        });
+//        adminmode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), employee_list.class));
+//                finish();
+//            }
+//        });
 
 
 

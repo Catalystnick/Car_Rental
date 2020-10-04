@@ -35,7 +35,7 @@ public class Profile extends AppCompatActivity {
 
     public static final String TAG = "TAG";
     Button changeProfileImage, updateInformation;
-    TextInputEditText profileFullName, profileEmail, profileNic;
+    TextInputEditText profileFullName, profileEmail, profileNic, profilePhone;
     ImageView profileImage;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
@@ -55,10 +55,12 @@ public class Profile extends AppCompatActivity {
         String fullName = data.getStringExtra("fullname");
         String email= data.getStringExtra("email");
         String Nic = data.getStringExtra("nic");
+        final String Phone = data.getStringExtra("PhoneNo");
 
         profileFullName = findViewById(R.id.updateFullName);
         profileEmail = findViewById(R.id.updateEmail);
         profileNic = findViewById(R.id.updateNic);
+        profilePhone = findViewById(R.id.updatePhoneNo);
 
         profileFullName.setText(fullName);
         profileEmail.setText(email);
@@ -106,7 +108,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(profileFullName.getText().toString().isEmpty() || profileEmail.getText().toString().isEmpty() || profileNic.getText().toString().isEmpty()){
+                if( profilePhone.getText().toString().isEmpty() || profileFullName.getText().toString().isEmpty() || profileEmail.getText().toString().isEmpty() || profileNic.getText().toString().isEmpty()){
                     Toast.makeText(Profile.this,"one or many fields are empty",Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -120,6 +122,7 @@ public class Profile extends AppCompatActivity {
                         edited.put("email", email);
                         edited.put("fName", profileFullName.getText().toString());
                         edited.put("Nic",profileNic.getText().toString());
+                        edited.put("PhoneNo", profilePhone.getText().toString());
 
                         documentReference.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -129,7 +132,7 @@ public class Profile extends AppCompatActivity {
                                 finish();
                             }
                         });
-                        Toast.makeText(Profile.this,"Email is changed",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Profile.this,"Profile updated",Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

@@ -9,12 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             android:background="#BC9797"
             android:padding="20dp"
             >
@@ -55,12 +56,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Full Name"
-                    android:textSize="20dp"/>
+                    android:textSize="15dp"/>
 
                 <TextView
                     android:id="@+id/fname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
                     android:text="TextView" />
 
 
@@ -69,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email"
-                    android:textSize="20dp"/>
+                    android:textSize="15dp"/>
 
 
                 <TextView
@@ -77,6 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
                     android:text="TextView" />
 
 
@@ -85,12 +90,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nic"
-                    android:textSize="20dp"/>
+                    android:textSize="15dp"/>
 
                 <TextView
                     android:id="@+id/nic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="TextView" />
+
+
+
+                <TextView
+                    android:id="@+id/updatePhoneTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
                     android:layout_marginTop="10dp"
                     android:text="TextView" />
 
@@ -129,34 +154,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                    <TextView
+                        android:id="@+id/upcommingtriptxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Up comming trip"
                         android:src="@drawable/common_full_open_on_phone"
                         android:layout_centerHorizontal="true"
                         />
 
                     <TextView
-                        android:id="@+id/Payment_label"
+                        android:id="@+id/startdate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$123"
-                        android:includeFontPadding="false"
-                        android:textSize="20sp"
+                        android:text="start date"
+                        android:textSize="20dp"
                         android:fontFamily="sans-serif"
                         android:layout_centerInParent="true">
                     </TextView>
 
 
                     <TextView
-                        android:id="@+id/Payment_desc"
+                        android:id="@+id/returndate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="40"
-                        android:textSize="40sp"
-                        android:includeFontPadding="false"
+                        android:text="return date"
+                        android:textSize="20dp"
                         android:fontFamily="sans-serif"
-                        android:layout_below="@+id/Payment_label"
+                        android:layout_below="@+id/startdate"
                         android:layout_centerHorizontal="true">
                     </TextView>
 
@@ -179,34 +205,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Trip times"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/common_full_open_on_phone"
                         android:layout_centerHorizontal="true"
                         />
 
                     <TextView
-                        android:id="@+id/Booking_label"
+                        android:id="@+id/StartTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$123"
-                        android:includeFontPadding="false"
-                        android:textSize="20sp"
+                        android:text="Start Time"
+                        android:textSize="20dp"
                         android:fontFamily="sans-serif"
                         android:layout_centerInParent="true">
                     </TextView>
 
 
                     <TextView
-                        android:id="@+id/Booking_desc"
+                        android:id="@+id/EndTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="40"
-                        android:textSize="40sp"
-                        android:includeFontPadding="false"
+                        android:text="Return time"
+                        android:textSize="20dp"
                         android:fontFamily="sans-serif"
-                        android:layout_below="@+id/Booking_label"
+                        android:layout_below="@+id/StartTime"
                         android:layout_centerHorizontal="true">
                     </TextView>
 

@@ -111,8 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter your Email"
-                    android:inputType="textEmailAddress"
-                    />
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,8 +124,8 @@
                 android:layout_marginLeft="10dp"
                 android:text="Phone Number"
                 android:textSize="20dp"/>
-            <com.google.android.material.textfield.TextInputLayout
 
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout3"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
