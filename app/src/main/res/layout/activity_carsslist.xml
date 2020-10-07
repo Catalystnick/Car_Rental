@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/car_model"
                     android:inputType="text"
-                    android:transitionName="empfullname_transiton" />
+                    android:transitionName="fullname_transiton" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/first_owner"
                     android:inputType="text"
-                    android:transitionName="empdob_transiton" />
+                    android:transitionName="username_transiton" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/vehicle_id"
-                    android:transitionName="empnic_transiton" />
+                    android:transitionName="nic_transiton" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -116,10 +116,10 @@
                 android:background="#000"
                 android:text="@string/save_car"
                 android:textColor="#fff"
-                android:transitionName="addemp_transiton" />
+                android:transitionName="signupbtn_transiton" />
 
             <ProgressBar
-                android:id="@+id/progressBarSignup"
+                android:id="@+id/progressBarSignup1"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,10 +128,8 @@
 
 
 
-
         </LinearLayout>
 
     </LinearLayout>
 
 </ScrollView>
-

@@ -47,7 +47,10 @@
     <string name="vehicle_id">Vehicle ID</string>
     <string name="save_car">New Car</string>
 
-
+    <string name="emp_name">Employee Name</string>
+    <string name="emp_list">Employee List</string>
+    <string name="view_employees">View Employees</string>
+    <string name="view_cars">View Cars</string>
 
 
 </resources>

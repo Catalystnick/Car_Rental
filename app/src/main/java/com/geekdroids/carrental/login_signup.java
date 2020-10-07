@@ -111,7 +111,7 @@ public class login_signup extends AppCompatActivity {
         adminmode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AdminLogin.class));
+                startActivity(new Intent(getApplicationContext(), AdminMode.class));
                 finish();
             }
         });
