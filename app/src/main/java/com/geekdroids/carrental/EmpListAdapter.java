@@ -29,7 +29,7 @@ public class EmpListAdapter extends ArrayAdapter {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = mContext.getLayoutInflater();
-        View listItemView = inflater.inflate(R.layout.activity_employee_list,null,true);
+        View listItemView = inflater.inflate(R.layout.emplist_custom,null,true);
 
         TextView empName = listItemView.findViewById(R.id.empName);
 

@@ -37,8 +37,7 @@
     <string name="emp_post">Enter Empolyee Occupation</string>
     <string name="enter_emp_email">Enter Empolyee Email</string>
     <string name="save_emp">Add Employee</string>
-    <string name="emp_name">Employee Name</string>
-    <string name="emp_list">All Employees</string>
+
 
 
     <string name="add_a_car">Add a new car</string>
@@ -51,6 +50,8 @@
     <string name="emp_list">Employee List</string>
     <string name="view_employees">View Employees</string>
     <string name="view_cars">View Cars</string>
+
+
 
 
 </resources>

@@ -2,6 +2,7 @@ package com.geekdroids.carrental;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class add_employee extends AppCompatActivity {
     Button saveEmp;
     DatabaseReference reff;
     Employee employee;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,10 @@ public class add_employee extends AppCompatActivity {
                 String eEmail = empEmail.getText().toString();
 
                 employee = new Employee(eName,eBirth,ENIC,emPhone,eOccu,eEmail);
-                reff.child(emPhone).setValue(employee);
+                reff.child(eName).setValue(employee);
+
+                startActivity(new Intent(getApplicationContext(), employee_list.class));
+                finish();
 
 
 

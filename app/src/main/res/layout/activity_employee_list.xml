@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".signup"
         android:orientation="vertical"
         android:background="#f2f2f2"
@@ -39,20 +39,26 @@
             android:fontFamily="cursive"
             android:textSize="18sp"
             android:transitionName="desc_transition"/>
-        //emp
 
-        <TextView
-            android:id="@+id/empName"
-            android:padding="10dp"
+        <ListView
+            android:id="@+id/emp_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/emp_name"
-            android:fontFamily="cursive"
-            android:textSize="18sp"
-            android:transitionName="desc_transition"/>
+            android:id="@+id/toadd"
+            android:text="add Employee"
+            />
 
 
 
     </LinearLayout>
 
-</ScrollView>
+
+
+
+</RelativeLayout>
+
