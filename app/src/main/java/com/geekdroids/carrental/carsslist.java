@@ -64,6 +64,9 @@ public class carsslist extends AppCompatActivity {
                 cars = new Cars(model, owner, ID);
                 reff.child(ID).setValue(cars);
 
+                startActivity(new Intent(getApplicationContext(), view_cars.class));
+                finish();
+
 
             }
         });

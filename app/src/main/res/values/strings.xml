@@ -39,7 +39,6 @@
     <string name="save_emp">Add Employee</string>
 
 
-
     <string name="add_a_car">Add a new car</string>
     <string name="car_model">Car model</string>
     <string name="first_owner">Name Of the Owner</string>
@@ -50,8 +49,6 @@
     <string name="emp_list">Employee List</string>
     <string name="view_employees">View Employees</string>
     <string name="view_cars">View Cars</string>
-
-
 
 
 </resources>

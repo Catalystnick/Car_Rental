@@ -33,7 +33,7 @@ public class AdminMode extends AppCompatActivity {
         viewcarr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), carsslist.class));
+                startActivity(new Intent(getApplicationContext(), view_cars.class));
                 finish();
             }
         });
