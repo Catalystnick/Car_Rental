@@ -16,6 +16,7 @@ public class CarListAdapter extends ArrayAdapter {
 
     private Activity mContext;
     List<Cars> carsList;
+    //new car
 
     public CarListAdapter(Activity mContext,List<Cars> carsList){
         super(mContext,R.layout.activity_view_cars,carsList);

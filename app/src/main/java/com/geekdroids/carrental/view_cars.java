@@ -32,6 +32,7 @@ public class view_cars extends AppCompatActivity {
     DatabaseReference ref;
     List<Cars> carsList;
     Button carAdd;
+    //new car
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
