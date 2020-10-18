@@ -31,7 +31,7 @@ import java.util.Map;
 public class carsslist extends AppCompatActivity {
 
     TextInputEditText carmodell, ownerr, vehicleid;
-    Button addcar;
+    Button addcar,page;
     ProgressBar progressBar1;
     FirebaseFirestore firestore;
     DatabaseReference reff;
@@ -48,6 +48,7 @@ public class carsslist extends AppCompatActivity {
         ownerr = findViewById(R.id.owner);
         vehicleid = findViewById(R.id.vid);
         addcar = findViewById(R.id.add_car);
+        page = findViewById(R.id.page);
 
         reff = FirebaseDatabase.getInstance().getReference().child("CAR");
 
@@ -63,6 +64,17 @@ public class carsslist extends AppCompatActivity {
 
                 cars = new Cars(model, owner, ID);
                 reff.child(ID).setValue(cars);
+
+                startActivity(new Intent(getApplicationContext(), view_cars.class));
+                finish();
+
+
+            }
+        });
+
+        page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 startActivity(new Intent(getApplicationContext(), view_cars.class));
                 finish();

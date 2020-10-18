@@ -4,53 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminMode">
-
-    <TextView
-        android:id="@+id/welcomeback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="400dp"
-        android:layout_marginBottom="37dp"
-        android:fontFamily="cursive"
-        android:padding="10dp"
-        android:text="@string/car_rental"
-        android:textSize="40sp"
-        android:transitionName="logoText"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:layout_marginBottom="62dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeback"
-        app:srcCompat="@drawable/car" />
+    tools:context=".AdminMode"
+    android:background="@drawable/gf"
+    >
 
     <Button
         android:id="@+id/viewemployee"
         android:layout_width="283dp"
         android:layout_height="57dp"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="19dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginBottom="150dp"
-        android:text="@string/view_employees"
+        android:text="View Or Edit Employee"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
 
     <Button
         android:id="@+id/viewcar"
@@ -58,12 +29,31 @@
         android:layout_height="57dp"
         android:layout_marginStart="76dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/view_cars"
+        android:text="View Or Edit Car"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-  />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.841" />
+
+    <TextView
+        android:id="@+id/welcomeback"
+        android:layout_width="415dp"
+        android:layout_height="133dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:text="Welcome Administrator ...."
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:transitionName="logoText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

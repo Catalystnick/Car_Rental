@@ -3,56 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".signup"
         android:orientation="vertical"
-        android:background="#f2f2f2"
-        android:padding="20dp">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/car"
-            android:contentDescription="@string/todo"
-            android:transitionName="logoImage"/>
-
-        <TextView
-            android:id="@+id/welcome"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textSize="40sp"
-            android:fontFamily="cursive"
-            android:layout_marginTop="20dp"
-            android:transitionName="logoText"/>
-
-        <TextView
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Car List"
-            android:fontFamily="cursive"
-            android:textSize="18sp"
-            android:transitionName="desc_transition"/>
-
-
-        <ListView
-            android:id="@+id/car_listview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:padding="20dp"
+        android:background="@drawable/fg"
+        >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/caradd"
-            android:text="add Car"
+            android:text="add new Car"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_background"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="casual"
+            android:padding="10dp"
+            android:text="List Of CARS"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:transitionName="desc_transition" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="61dp"
+            android:layout_gravity="left"
+            android:fontFamily="serif"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Click To Edit Or Delete The Car"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:transitionName="desc_transition" />
+
+        <ListView
+            android:id="@+id/car_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp"
+            android:textAlignment="center" />
 
 
     </LinearLayout>

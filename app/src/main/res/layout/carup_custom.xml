@@ -1,56 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/er"
     android:orientation="vertical">
+
 
     <EditText
         android:id="@+id/upModel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Model"
-        android:layout_marginTop="10dp"
-
-        />
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background"
+        android:drawablePadding="25dp"
+        android:drawableTint="#B8B8B8"
+        android:hint="Car Model"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#E9E9E9"
+        android:textColorHint="#B8B8B8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/upOwner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Owner"
-        android:layout_marginTop="10dp"
-
-        />
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background"
+        android:drawablePadding="25dp"
+        android:drawableTint="#B8B8B8"
+        android:hint="Owner of the Car"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#E9E9E9"
+        android:textColorHint="#B8B8B8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_box" />
 
     <EditText
         android:id="@+id/upID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Vehicle ID"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background"
+        android:drawablePadding="25dp"
+        android:drawableTint="#B8B8B8"
+        android:hint="Vehicle Number"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#E9E9E9"
+        android:textColorHint="#B8B8B8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_box" />
 
-        />
+    <EditText
+        android:id="@+id/upcol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background"
+        android:drawablePadding="25dp"
+        android:drawableTint="#B8B8B8"
+        android:hint="Car Colour"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#E9E9E9"
+        android:textColorHint="#B8B8B8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_box">
 
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/upseats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background"
+        android:drawablePadding="25dp"
+        android:drawableTint="#B8B8B8"
+        android:hint="Number Of Seats"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#E9E9E9"
+        android:textColorHint="#B8B8B8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_box"></EditText>
 
     <Button
         android:id="@+id/upCarBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Details"
-
-        />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_style"
+        android:text="Update Car Details"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_password_box" />
 
     <Button
         android:id="@+id/delCarBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete Car"
-
-        />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_style"
+        android:text="Delete Car "
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_password_box" />
 </LinearLayout>

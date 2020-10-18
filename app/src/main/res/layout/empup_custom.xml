@@ -2,86 +2,131 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/login_bk"
+    android:layout_marginBottom="30dp">
 
     <EditText
         android:id="@+id/upMail"
-        android:layout_width="match_parent"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="New Email"
-        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
 
     <EditText
         android:id="@+id/upPhone"
-        android:layout_width="match_parent"
+        android:fontFamily="casual"
+        android:layout_width="249dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Phone Number"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:layout_marginEnd="15dp"
+        android:hint="New Phone Number"
+        android:textStyle="bold"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
 
     <EditText
         android:id="@+id/upPost"
-        android:layout_width="match_parent"
+        android:layout_width="278dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Occupation"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="New Occupation"
+        android:textStyle="bold"
+        android:layout_marginEnd="15dp"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
 
     <EditText
         android:id="@+id/upName"
-        android:layout_width="match_parent"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Name"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="New Name"
+        android:fontFamily="casual"
+        android:layout_marginEnd="15dp"
+        android:textStyle="bold"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
 
     <EditText
         android:id="@+id/upDOB"
-        android:layout_width="match_parent"
+        android:layout_width="345dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Date Of Birth"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="New Date Of Birth"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:layout_marginEnd="15dp"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
 
     <EditText
         android:id="@+id/upNIC"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="New Occupation"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="New Occupation"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:layout_marginEnd="15dp"
+        android:textColorHint="@color/coloredit"
+        android:inputType="textPersonName"
 
         />
     <Button
+
         android:id="@+id/upBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Details"
-
+        android:text="Save My Details"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:background="@drawable/login_button_bk"
         />
 
     <Button
         android:id="@+id/delBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete Employee"
-
+        android:text="Delete My Employee Account"
+        android:layout_marginStart="40dp"
+        android:textSize="18dp"
+        android:textColor="#DF584D"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_button_bk"
         />
 </LinearLayout>

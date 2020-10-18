@@ -3,49 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image_one_signup"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".signup"
         android:orientation="vertical"
-        android:background="#f2f2f2"
-        android:padding="20dp">
+        android:padding="20dp"
+        >
+
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/car"
-            android:contentDescription="@string/todo"
-            android:transitionName="logoImage"/>
+            android:id="@+id/imageView2"
+            android:layout_width="238dp"
+            android:layout_height="134dp"
+            app:srcCompat="@drawable/emp" />
 
         <TextView
-            android:id="@+id/welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WELCOME"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"
+            android:textColor="#ffff"
+            android:textSize="45sp"
+            />
+
+        <TextView
             android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textSize="40sp"
-            android:fontFamily="cursive"
-            android:layout_marginTop="20dp"
-            android:transitionName="logoText"/>
-
-        <TextView
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_emp_to_db"
-            android:fontFamily="cursive"
-            android:textSize="18sp"
+            android:text="Enroll As A New Employee"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textStyle="bold"
+            android:textColor="#090909"
+            android:textSize="20sp"
             android:transitionName="desc_transition"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical">
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:gravity="top"
+            android:background="@drawable/edittext_background"
+            >
+
 
             <com.google.android.material.textfield.TextInputLayout
 
@@ -53,16 +62,22 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="30dp"
                 app:boxStrokeColor="@android:color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emp_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_emp_name"
-                    android:inputType="text"
-                    android:transitionName="empfullname_transiton" />
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:drawablePadding="10dp"
+                    android:hint="NAME"
+                    android:padding="20dp"
+                    android:textColorHint="#606060"
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,16 +89,21 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 app:boxStrokeColor="@android:color/black"
-                app:counterEnabled="true"
-                app:counterMaxLength="20">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/emp_dob"
-                    android:inputType="text"
-                    android:transitionName="empdob_transiton" />
+                    android:drawablePadding="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:hint="Date Of Birth"
+                    android:textStyle="bold"
+                    android:padding="20dp"
+                    android:textSize="14sp"
+                    android:textColorHint="#606060"
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,14 +115,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
-                app:boxStrokeColor="@android:color/black">
+                app:boxStrokeColor="@android:color/black"
+                app:counterEnabled="true"
+                app:counterMaxLength="12">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/enic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_emp_nic"
-                    android:transitionName="empnic_transiton" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="14sp"
+                    android:drawablePadding="10dp"
+                    android:hint="NIC Number"
+                    android:textStyle="bold"
+                    android:padding="20dp"
+                    android:textColorHint="#606060"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -118,9 +148,16 @@
                     android:id="@+id/e_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_emp_phone"
-                    android:inputType="number"
-                    android:transitionName="ephone_transiton" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="14sp"
+                    android:drawablePadding="10dp"
+                    android:hint="Phone Number"
+                    android:padding="20dp"
+                    android:textColorHint="#606060"
+                    android:textStyle="bold"
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -131,15 +168,22 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 app:boxStrokeColor="@android:color/black"
-                app:passwordToggleEnabled="true">
+               >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emp_post"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/emp_post"
-                    android:inputType="textPassword"
-                    android:transitionName="post_transition" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="14sp"
+                    android:drawablePadding="10dp"
+                    android:hint="Post Your'r Registering For"
+                    android:padding="20dp"
+                    android:textStyle="bold"
+                    android:textColorHint="#606060"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -155,9 +199,16 @@
                     android:id="@+id/emp_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_emp_email"
-                    android:inputType="textEmailAddress"
-                    android:transitionName="emp_email_transiton" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:textSize="14sp"
+                    android:drawablePadding="10dp"
+                    android:textStyle="bold"
+                    android:hint="Email"
+                    android:padding="20dp"
+                    android:textColorHint="#606060"
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -165,21 +216,25 @@
                 android:id="@+id/addE_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="#000"
-                android:text="@string/save_emp"
-                android:textColor="#fff"
-                android:transitionName="addemp_transiton" />
+                android:background="@drawable/button_background"
+                android:text="Join The Team"
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:textColor="@android:color/white" />
 
-            <ProgressBar
-                android:id="@+id/progressBarSignup"
-                style="?android:attr/progressBarStyle"
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
-                tools:visibility="invisible" />
-
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:text="Thank You For Enrolling, We Welcome You As Our New Employee" />
 
 
 

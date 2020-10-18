@@ -3,22 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".signup"
         android:orientation="vertical"
-        android:background="#f2f2f2"
-        android:padding="20dp">
+        android:background="@drawable/background_image_one_signin"
+        android:padding="20dp"
+
+        >
+
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/car"
-            android:contentDescription="@string/todo"
-            android:transitionName="logoImage"/>
+
+            android:id="@+id/imageView5"
+            android:layout_width="172dp"
+            android:layout_height="72dp"
+            app:srcCompat="@drawable/cars2"
+            android:layout_marginTop="30dp"
+            />
+
+
 
         <TextView
             android:id="@+id/welcome"
@@ -27,24 +35,30 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome"
             android:textSize="40sp"
-            android:fontFamily="cursive"
-            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/coloredit"
+            android:fontFamily="casual"
+            android:layout_marginTop="0dp"
             android:transitionName="logoText"/>
+
+
 
         <TextView
             android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_a_car"
-            android:fontFamily="cursive"
-            android:textSize="18sp"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:textColor="@color/coloredit"
+            android:textSize="30sp"
             android:transitionName="desc_transition"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -62,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/car_model"
                     android:inputType="text"
+                    android:textStyle="bold"
                     android:transitionName="fullname_transiton" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -74,8 +89,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 app:boxStrokeColor="@android:color/black"
-                app:counterEnabled="true"
-                app:counterMaxLength="20">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/owner"
@@ -83,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/first_owner"
                     android:inputType="text"
+                    android:textStyle="bold"
                     android:transitionName="username_transiton" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +110,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="6"
                 app:boxStrokeColor="@android:color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -102,8 +119,52 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/vehicle_id"
+                    android:textStyle="bold"
                     android:transitionName="nic_transiton" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/layout4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@android:color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/carcolor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Car Colour"
+                    android:textStyle="bold"
+                    android:transitionName="nic_transiton" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/layout5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@android:color/black"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/seats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Number Of Seats"
+                    android:textStyle="bold"
+                    android:inputType="number"
+                    android:transitionName="nic_transiton"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
 
 
@@ -113,9 +174,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="#000"
-                android:text="@string/save_car"
-                android:textColor="#fff"
+                android:background="@drawable/button_background"
+                android:text="Add My Car"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif-black"
+                android:transitionName="signupbtn_transiton" />
+
+            <Button
+                android:id="@+id/page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_background"
+                android:text="View Cars List"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif-black"
                 android:transitionName="signupbtn_transiton" />
 
             <ProgressBar
@@ -129,6 +205,8 @@
 
 
         </LinearLayout>
+
+
 
     </LinearLayout>
 

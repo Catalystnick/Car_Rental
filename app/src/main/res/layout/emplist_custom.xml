@@ -3,4 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/empName"
+    android:textSize="30dp"
+    android:background="@drawable/button_background"
+    android:textColor="#FFFFFF"
+    android:textStyle="bold"
+    android:fontFamily="serif-monospace"
+    android:textAlignment="center"
     />
