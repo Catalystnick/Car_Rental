@@ -94,11 +94,19 @@ public class view_cars extends AppCompatActivity {
         final EditText upModel = mDialogView.findViewById(R.id.upModel);
         final EditText upOwner = mDialogView.findViewById(R.id.upOwner);
         final EditText upID = mDialogView.findViewById(R.id.upID);
+        final EditText upColour = mDialogView.findViewById(R.id.upcol);
+        final EditText upSeats = mDialogView.findViewById(R.id.upseats);
         final Button upCar = mDialogView.findViewById(R.id.upCarBtn);
         Button delCar =mDialogView.findViewById(R.id.delCarBtn);
 
         mDialog.setTitle("Updating " + model + "'s record");
         mDialog.show();
+
+
+
+
+
+
 
 
         upCar.setOnClickListener(new View.OnClickListener() {
@@ -107,11 +115,16 @@ public class view_cars extends AppCompatActivity {
                 String newModel = upModel.getText().toString();
                 String newOwner = upOwner.getText().toString();
                 String newID = upID.getText().toString();
+                String newcolour = upColour.getText().toString();
+                String newSeats = upSeats.getText().toString();
 
 
 
-                updateData(newModel,newOwner,newID);
+                updateData(newModel,newOwner,newID,newcolour,newID);
                 Toast.makeText(view_cars.this, "Record Update", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(getApplicationContext(), view_cars.class));
+                finish();
 
             }
         });
@@ -123,14 +136,17 @@ public class view_cars extends AppCompatActivity {
                 String newModel = upModel.getText().toString();
                 deleteRecord(newModel);
 
+                startActivity(new Intent(getApplicationContext(), view_cars.class));
+                finish();
+
             }
         });
 
     }
 
-    private void updateData(String model,String owner,String id){
+    private void updateData(String model,String owner,String id,String colour,String seats){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("CAR").child(model);
-        Cars cars = new Cars(model,owner,id);
+        Cars cars = new Cars(model,owner,id,colour,seats);
         reference.setValue(cars);
     }
 

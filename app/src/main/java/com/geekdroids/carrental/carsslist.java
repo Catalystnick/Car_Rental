@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class carsslist extends AppCompatActivity {
 
-    TextInputEditText carmodell, ownerr, vehicleid;
+    TextInputEditText carmodell, ownerr, vehicleid,carcolour,carseats;
     Button addcar,page;
     ProgressBar progressBar1;
     FirebaseFirestore firestore;
@@ -47,6 +47,8 @@ public class carsslist extends AppCompatActivity {
         carmodell = findViewById(R.id.car_model);
         ownerr = findViewById(R.id.owner);
         vehicleid = findViewById(R.id.vid);
+        carcolour = findViewById(R.id.carcolor);
+        carseats = findViewById(R.id.seats);
         addcar = findViewById(R.id.add_car);
         page = findViewById(R.id.page);
 
@@ -60,10 +62,12 @@ public class carsslist extends AppCompatActivity {
                 String model = carmodell.getText().toString();
                 String owner = ownerr.getText().toString();
                 String ID = vehicleid.getText().toString();
+                String Colour = carcolour.getText().toString();
+                String Seats = carseats.getText().toString();
 
 
-                cars = new Cars(model, owner, ID);
-                reff.child(ID).setValue(cars);
+                cars = new Cars(model, owner, ID,Colour,Seats);
+                reff.child(model).setValue(cars);
 
                 startActivity(new Intent(getApplicationContext(), view_cars.class));
                 finish();

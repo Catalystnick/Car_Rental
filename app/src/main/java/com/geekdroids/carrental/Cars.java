@@ -4,6 +4,8 @@ public class Cars {
     private String Model;
     private String Owner;
     private String ID;
+    private String Colour;
+    private String Seats;
 
 
 
@@ -11,11 +13,29 @@ public class Cars {
 
     }
 
-    public Cars(String model, String owner, String ID) {
+    public Cars(String model, String owner, String ID, String colour, String seats) {
         Model = model;
         Owner = owner;
         this.ID = ID;
-    }//constructor
+        Colour = colour;
+        Seats = seats;
+    }
+
+    public String getColour() {
+        return Colour;
+    }
+
+    public void setColour(String colour) {
+        Colour = colour;
+    }
+
+    public String getSeats() {
+        return Seats;
+    }
+
+    public void setSeats(String seats) {
+        Seats = seats;
+    }
 
     public String getModel() {
         return Model;
